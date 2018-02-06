@@ -50,6 +50,7 @@ class Intermediate {
 
 
 class Cocomo {
+
 	int INTERMEDIATE = 1;
 	int BASIC = 0;
 
