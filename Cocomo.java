@@ -1,6 +1,9 @@
 import java.util.*;
 
 class Cocomo {
+	static int INTERMEDIATE = 1;
+	static int BASIC = 0;
+
 
 	static void Basic() {
 
@@ -20,8 +23,8 @@ class Cocomo {
 		//getEAF
 		//Intermediate or basic
 		//getTypeOfSystem
-		if(tos){
-			
+		if(tos==){
+
 		}
 		//calculations based on TOS
 		//Dispplay results
