@@ -2,41 +2,49 @@ import java.util.*;
 
 class Basic {
 
+	int ORGANIC = 0;
+	int SEMI_DETACHED = 1;
+	int EMBEDDED =2;
+
 	double[] a = new double[];
 	double[] b = new double[];
 	double[] c = new double[];
 	double[] d = new double[];
 
-	a[0] = 2.4;
-	a[1] = 3;
-	a[2] = 3.6;
+	a[ORGANIC] = 2.4;
+	a[SEMI_DETACHED] = 3;
+	a[EMBEDDED] = 3.6;
 
-	b[0] = 1.05;
-	b[1] = 1.12;
-	b[2] = 1.20;
+	b[ORGANIC] = 1.05;
+	b[SEMI_DETACHED] = 1.12;
+	b[EMBEDDED] = 1.20;
 
-	c[0] = 2.5;
-	c[1] = 2.5;
-	c[2] = 2.5;
+	c[ORGANIC] = 2.5;
+	c[SEMI_DETACHED] = 2.5;
+	c[EMBEDDED] = 2.5;
 
-	d[0] = 0.38;
-	d[1] = 0.36;
-	d[2] = 0.32;
+	d[ORGANIC] = 0.38;
+	d[SEMI_DETACHED] = 0.36;
+	d[EMBEDDED] = 0.32;
 
 }
 
 class Intermediate {
 
+	int ORGANIC = 0;
+	int SEMI_DETACHED = 1;
+	int EMBEDDED =2;
+
 	double[] a = new double[];
 	double[] b = new double[];
 
-	a[0] = 3.8;
-	a[1] = 3.0;
-	a[2] = 2.8;
+	a[ORGANIC] = 3.8;
+	a[SEMI_DETACHED] = 3.0;
+	a[EMBEDDED] = 2.8;
 
-	b[0] = 1.05;
-	b[1] = 1.12;
-	b[2] = 1.2;
+	b[ORGANIC] = 1.05;
+	b[SEMI_DETACHED] = 1.12;
+	b[EMBEDDED] = 1.2;
 
 }
 
