@@ -91,7 +91,7 @@ class Cocomo {
             sum = sum + eaf[i];
         }
 
-        return sum;
+        return (sum/4);
     }
 
 	static int getTypeOfSystem() {
