@@ -2,14 +2,14 @@ import java.util.*;
 
 class Basic {
 
-	int ORGANIC = 0;
-	int SEMI_DETACHED = 1;
-	int EMBEDDED =2;
+	final int ORGANIC = 0;
+	final int SEMI_DETACHED = 1;
+	final int EMBEDDED =2;
 
-	double[] a = new double[];
-	double[] b = new double[];
-	double[] c = new double[];
-	double[] d = new double[];
+	double[] a = new double[3];
+	double[] b = new double[3];
+	double[] c = new double[3];
+	double[] d = new double[3];
 
 	a[ORGANIC] = 2.4;
 	a[SEMI_DETACHED] = 3;
@@ -31,12 +31,12 @@ class Basic {
 
 class Intermediate {
 
-	int ORGANIC = 0;
-	int SEMI_DETACHED = 1;
-	int EMBEDDED =2;
+	final int ORGANIC = 0;
+	final int SEMI_DETACHED = 1;
+	final int EMBEDDED =2;
 
-	double[] a = new double[];
-	double[] b = new double[];
+	double[] a = new double[3];
+	double[] b = new double[3];
 
 	a[ORGANIC] = 3.8;
 	a[SEMI_DETACHED] = 3.0;
@@ -51,12 +51,12 @@ class Intermediate {
 
 class Cocomo {
 
-	int INTERMEDIATE = 1;
-	int BASIC = 0;
+	final int INTERMEDIATE = 1;
+	final int BASIC = 0;
 
-	int ORGANIC = 0;
-	int SEMI_DETACHED = 1;
-	int EMBEDDED =2;
+	final int ORGANIC = 0;
+	final int SEMI_DETACHED = 1;
+	final int EMBEDDED =2;
 
 	static Double getEAF() {
 
@@ -187,7 +187,7 @@ class Cocomo {
 		classOfSystem = getClassOfSystem();
 		KLOC = getKLOC();
 
-		switch () {
+		switch (typeOfSystem) {
 			case BASIC:
 				effort = calculateEffort(typeOfSystem,classOfSystem,KLOC,1);
 				dev = calculateDEV();
