@@ -4,7 +4,7 @@ class Cocomo {
 
 	static void Basic() {
 
-		
+
 	}
 
 	static void Intermediate() {
@@ -15,7 +15,15 @@ class Cocomo {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
+		int tos;
 
-
+		//getEAF
+		//Intermediate or basic
+		//getTypeOfSystem
+		if(tos){
+			
+		}
+		//calculations based on TOS
+		//Dispplay results
 	}
 }
