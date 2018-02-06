@@ -49,17 +49,32 @@ class Cocomo {
 	int SEMI_DETACHED = 1;
 	int EMBEDDED =2;
 
+	static double calculateEffort(int classOfSystem, int KLOC, int EAF){
+
+	}
+
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
 		int tos;
+		int classOfSystem;
+		int typeOfSystem;
+		int kLOC;
+		double EAF = 1;
 
-		//getEAF
-		//Intermediate or basic
-		//getTypeOfSystem
-		if(tos==){
+		typeOfSystem = getTypeOfSystem();
+		classOfSystem = getClassOfSystem();
+		kLOC = getKLOC();
 
+		switch () {
+			case BASIC:
+
+				break;
+			case INTERMEDIATE:
+				EAF = getEAF();
+				break;
 		}
+
 		//calculations based on TOS
 		//Dispplay results
 	}
