@@ -27,6 +27,17 @@ class Basic {
 
 class Intermediate {
 
+	double[] a = new double[];
+	double[] b = new double[];
+
+	a[0] = 3.8;
+	a[1] = 3.0;
+	a[2] = 2.8;
+
+	b[0] = 1.05;
+	b[1] = 1.12;
+	b[2] = 1.2;
+
 }
 
 
