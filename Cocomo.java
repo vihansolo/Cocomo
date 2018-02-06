@@ -109,10 +109,20 @@ class Cocomo {
 		System.out.print("Enter number of lines of code in 1000");
 		System.out.println();
 
-		System.out.print("Enter value : ");
-		classOfSystem = sc.nextInt();
+		
+	}
 
-		return classOfSystem;
+	static double calculateEffort(int typeOfSystem, int classOfSystem, int KLOC, int EAF){
+		int INTERMEDIATE = 1;
+		int BASIC = 0;
+		int a = -1, b = -1;
+
+		if(typeOfSystem == INTERMEDIATE){
+			Intermediate i = new Intermediate();
+			a = i.
+		}else if(typeOfSystem == BASIC){
+
+		}
 	}
 
 	public static void main(String[] args) {
