@@ -109,7 +109,9 @@ class Cocomo {
 		System.out.print("Enter number of lines of code in 1000");
 		System.out.println();
 
-		
+		getKLOC = sc.nextInt();
+
+		return getKLOC;
 	}
 
 	static double calculateEffort(int typeOfSystem, int classOfSystem, int KLOC, int EAF){
