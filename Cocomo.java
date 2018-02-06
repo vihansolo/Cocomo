@@ -118,10 +118,22 @@ class Cocomo {
 			a = i.a[classOfSystem];
 			b = i.b[classOfSystem];
 		}else if(typeOfSystem == BASIC){
-			Intermediate i = new Basic();
-			a = i.a[classOfSystem];
-			b = i.b[classOfSystem];
+			Basic ba = new Basic();
+			a = ba.a[classOfSystem];
+			b = ba.b[classOfSystem];
 		}
+
+		return a*pow(KLOC,b)*EAF;
+	}
+
+	static double calculateDEV(double effort){
+		int c,d;
+
+		Basic ba = new Basic();
+		c = ba.c[classOfSystem];
+		d = ba.d[classOfSystem];
+
+		return c*pow(effort,d);
 	}
 
 	public static void main(String[] args) {
@@ -132,21 +144,25 @@ class Cocomo {
 		int typeOfSystem;
 		int KLOC;
 		double EAF = 1;
+		int effort = 0;
+		int dev = 0;
 
 		typeOfSystem = getTypeOfSystem();
 		classOfSystem = getClassOfSystem();
-		kLOC = getKLOC();
+		KLOC = getKLOC();
 
 		switch () {
 			case BASIC:
-
+				effort = calculateEffort(typeOfSystem,classOfSystem,KLOC,1);
+				dev = calculateDEV();
+				System.out.println("Effort for Basic sys= "+effort);
+				System.out.println("Dev = "+dev);
 				break;
 			case INTERMEDIATE:
 				EAF = getEAF();
+				effort = calculateEffort(typeOfSystem,classOfSystem,KLOC,EAF);
+				System.out.println("Effort for Intermediate sys= "+effort);
 				break;
 		}
-
-		//calculations based on TOS
-		//Dispplay results
 	}
 }
