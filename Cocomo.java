@@ -58,6 +58,42 @@ class Cocomo {
 	int SEMI_DETACHED = 1;
 	int EMBEDDED =2;
 
+	static Double getEAF() {
+
+        Scanner sc = new Scanner(System.in);
+
+        Double sum = 0;
+        Double eaf[] = new Double[4];
+
+        String ques[] = {
+
+            "Product or cost driver which includes complexity, size of the system and database - ",
+            "Hardware and Software attribute - ",
+            "Personal/people attribute - ",
+            "Project - "
+        };
+
+        System.out.println();
+        System.out.println("Enter values between 0.9 - 1.4 :");
+        System.out.println();
+
+        for (int i=0; i<4; i++) {
+
+            System.out.print(ques[i]);
+            eaf[i] = sc.nextDouble();
+
+            if ((eaf[i] < 0.9) || (eaf[i] > 1.4)) {
+
+                System.out.println("Enter values between 0.9 - 1.4 !!!!");
+                return 0;
+            }
+
+            sum = sum + eaf[i];
+        }
+
+        return sum;
+    }
+
 	static int getTypeOfSystem() {
 		Scanner sc = new Scanner(System.in);
 
