@@ -31,6 +31,12 @@ class Intermediate {
 
 
 class Cocomo {
+	int INTERMEDIATE = 1;
+	int BASIC = 0;
+
+	int ORGANIC = 0;
+	int SEMI_DETACHED = 1;
+	int EMBEDDED =2;
 
 	public static void main(String[] args) {
 
