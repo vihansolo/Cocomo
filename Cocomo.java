@@ -7,14 +7,9 @@ class Basic() {
 	double[] c = new double[];
 	double[] d = new double[];
 
-<<<<<<< HEAD
 	a[0] = 2.4;
 	a[1] = 3;
 	a[2] = 3.6;
-=======
-
-	}
->>>>>>> 236ea4e5c919d3b29651623eca6b8cedc131bfd1
 
 	b[0] = 1.05;
 	b[1] = 1.12;
@@ -46,7 +41,7 @@ class Cocomo {
 		//Intermediate or basic
 		//getTypeOfSystem
 		if(tos){
-			
+
 		}
 		//calculations based on TOS
 		//Dispplay results
