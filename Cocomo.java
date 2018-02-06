@@ -58,13 +58,7 @@ class Cocomo {
 	int SEMI_DETACHED = 1;
 	int EMBEDDED =2;
 
-	static double calculateEffort(int classOfSystem, int KLOC, int EAF) {
-
-
-	}
-
 	static int getTypeOfSystem() {
-
 		Scanner sc = new Scanner(System.in);
 
 		int typeOfSystem;
@@ -121,9 +115,12 @@ class Cocomo {
 
 		if(typeOfSystem == INTERMEDIATE){
 			Intermediate i = new Intermediate();
-			a = i.
+			a = i.a[classOfSystem];
+			b = i.b[classOfSystem];
 		}else if(typeOfSystem == BASIC){
-
+			Intermediate i = new Basic();
+			a = i.a[classOfSystem];
+			b = i.b[classOfSystem];
 		}
 	}
 
