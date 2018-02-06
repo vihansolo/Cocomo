@@ -50,41 +50,6 @@ class Intermediate {
 
 
 class Cocomo {
-	static double getEAF() {
-
-        Scanner sc = new Scanner(System.in);
-
-        double sum = 0;
-        double eaf[] = new double[4];
-
-        String ques[] = {
-
-            "Product or cost driver which includes complexity, size of the system and database - ",
-            "Hardware and Software attribute - ",
-            "Personal/people attribute - ",
-            "Project - "
-        };
-
-        System.out.println();
-        System.out.println("Enter values between 0.9 - 1.4 :");
-        System.out.println();
-
-        for (int i=0; i<4; i++) {
-
-            System.out.print(ques[i]);
-            eaf[i] = sc.nextInt();
-
-            if ((eaf[i] < 0.9) || (eaf[i] > 1.4)) {
-
-                System.out.println("Enter values between 0.9 - 1.4 !!!!");
-                System.exit(0);
-            }
-
-            sum = sum + eaf[i];
-        }
-
-        return sum;
-    }
 
 	int INTERMEDIATE = 1;
 	int BASIC = 0;
@@ -93,8 +58,61 @@ class Cocomo {
 	int SEMI_DETACHED = 1;
 	int EMBEDDED =2;
 
-	static double calculateEffort(int classOfSystem, int KLOC, int EAF){
+	static double calculateEffort(int classOfSystem, int KLOC, int EAF) {
 
+
+	}
+
+	static int getTypeOfSystem() {
+
+		Scanner sc = new Scanner(System.in);
+
+		int typeOfSystem;
+
+		System.out.println();
+		System.out.println("Enter  1. Basic System");
+		System.out.println("	   2. Intermediate System");
+		System.out.println();
+
+		typeOfSystem = sc.nextInt();
+
+		return typeOfSystem;
+
+	}
+
+	static int getClassOfSystem() {
+
+		Scanner sc = new Scanner(System.in);
+
+		int classOfSystem;
+
+		System.out.println();
+		System.out.println("Enter  1. Organic System");
+		System.out.println("	   2. Semi-detached System");
+		System.out.println("	   3. Embedded System");
+		System.out.println();
+
+		System.out.print("Enter value : ");
+		classOfSystem = sc.nextInt();
+
+		return classOfSystem;
+
+	}
+
+	static int getKLOC() {
+
+		Scanner sc = new Scanner(System.in);
+
+		int KLOC;
+
+		System.out.println();
+		System.out.print("Enter number of lines of code in 1000");
+		System.out.println();
+
+		System.out.print("Enter value : ");
+		classOfSystem = sc.nextInt();
+
+		return classOfSystem;
 	}
 
 	public static void main(String[] args) {
@@ -103,7 +121,7 @@ class Cocomo {
 		int tos;
 		int classOfSystem;
 		int typeOfSystem;
-		int kLOC;
+		int KLOC;
 		double EAF = 1;
 
 		typeOfSystem = getTypeOfSystem();
