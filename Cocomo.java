@@ -6,27 +6,33 @@ class Basic {
 	final int SEMI_DETACHED = 1;
 	final int EMBEDDED =2;
 
-	double[] a = new double[3];
-	double[] b = new double[3];
-	double[] c = new double[3];
-	double[] d = new double[3];
+	double[] a;
+	double[] b;
+	double[] c;
+	double[] d;
 
-	a[ORGANIC] = 2.4;
-	a[SEMI_DETACHED] = 3;
-	a[EMBEDDED] = 3.6;
+	Basic(){
+		a = new double[3];
+		b = new double[3];
+		c = new double[3];
+		d = new double[3];
 
-	b[ORGANIC] = 1.05;
-	b[SEMI_DETACHED] = 1.12;
-	b[EMBEDDED] = 1.20;
+		a[ORGANIC] = 2.4;
+		a[SEMI_DETACHED] = 3;
+		a[EMBEDDED] = 3.6;
 
-	c[ORGANIC] = 2.5;
-	c[SEMI_DETACHED] = 2.5;
-	c[EMBEDDED] = 2.5;
+		b[ORGANIC] = 1.05;
+		b[SEMI_DETACHED] = 1.12;
+		b[EMBEDDED] = 1.20;
 
-	d[ORGANIC] = 0.38;
-	d[SEMI_DETACHED] = 0.36;
-	d[EMBEDDED] = 0.32;
+		c[ORGANIC] = 2.5;
+		c[SEMI_DETACHED] = 2.5;
+		c[EMBEDDED] = 2.5;
 
+		d[ORGANIC] = 0.38;
+		d[SEMI_DETACHED] = 0.36;
+		d[EMBEDDED] = 0.32;
+	}
 }
 
 class Intermediate {
@@ -35,17 +41,21 @@ class Intermediate {
 	final int SEMI_DETACHED = 1;
 	final int EMBEDDED =2;
 
-	double[] a = new double[3];
-	double[] b = new double[3];
+	double[] a;
+	double[] b;
 
-	a[ORGANIC] = 3.8;
-	a[SEMI_DETACHED] = 3.0;
-	a[EMBEDDED] = 2.8;
+	Intermediate(){
+		a = new double[3];
+		b = new double[3];
 
-	b[ORGANIC] = 1.05;
-	b[SEMI_DETACHED] = 1.12;
-	b[EMBEDDED] = 1.2;
+		a[ORGANIC] = 3.8;
+		a[SEMI_DETACHED] = 3.0;
+		a[EMBEDDED] = 2.8;
 
+		b[ORGANIC] = 1.05;
+		b[SEMI_DETACHED] = 1.12;
+		b[EMBEDDED] = 1.2;
+	}
 }
 
 
@@ -145,8 +155,8 @@ class Cocomo {
 	}
 
 	static double calculateEffort(int typeOfSystem, int classOfSystem, int KLOC, int EAF){
-		int INTERMEDIATE = 1;
-		int BASIC = 0;
+		final static int INTERMEDIATE = 1;
+		final static int BASIC = 0;
 		int a = -1, b = -1;
 
 		if(typeOfSystem == INTERMEDIATE){
@@ -162,8 +172,8 @@ class Cocomo {
 		return a*pow(KLOC,b)*EAF;
 	}
 
-	static double calculateDEV(double effort){
-		int c,d;
+	static double calculateDEV(double effort, int classOfSystem){
+		double c,d;
 
 		Basic ba = new Basic();
 		c = ba.c[classOfSystem];
@@ -179,9 +189,9 @@ class Cocomo {
 		int classOfSystem;
 		int typeOfSystem;
 		int KLOC;
-		double EAF = 1;
-		int effort = 0;
-		int dev = 0;
+		double EAF = 1.0;
+		double effort = 0;
+		double dev = 0;
 
 		typeOfSystem = getTypeOfSystem();
 		classOfSystem = getClassOfSystem();
@@ -190,7 +200,7 @@ class Cocomo {
 		switch (typeOfSystem) {
 			case BASIC:
 				effort = calculateEffort(typeOfSystem,classOfSystem,KLOC,1);
-				dev = calculateDEV();
+				dev = calculateDEV(effort, classOfSystem);
 				System.out.println("Effort for Basic sys= "+effort);
 				System.out.println("Dev = "+dev);
 				break;
