@@ -1,4 +1,5 @@
 import java.util.*;
+import java.lang.Math;
 
 class Basic {
 
@@ -61,8 +62,8 @@ class Intermediate {
 
 class Cocomo {
 
-	final int INTERMEDIATE = 1;
-	final int BASIC = 0;
+	final static int INTERMEDIATE = 1;
+	final static int BASIC = 0;
 
 	final int ORGANIC = 0;
 	final int SEMI_DETACHED = 1;
@@ -72,7 +73,7 @@ class Cocomo {
 
         Scanner sc = new Scanner(System.in);
 
-        Double sum = 0;
+        Double sum = 0.0;
         Double eaf[] = new Double[4];
 
         String ques[] = {
@@ -95,7 +96,7 @@ class Cocomo {
             if ((eaf[i] < 0.9) || (eaf[i] > 1.4)) {
 
                 System.out.println("Enter values between 0.9 - 1.4 !!!!");
-                return 0;
+                return 0.0;
             }
 
             sum = sum + eaf[i];
@@ -111,8 +112,9 @@ class Cocomo {
 
 		System.out.println();
 		System.out.println("Enter  1. Basic System");
-		System.out.println("	   2. Intermediate System");
+		System.out.println("       2. Intermediate System");
 		System.out.println();
+		System.out.print("Enter value : ");
 
 		typeOfSystem = sc.nextInt();
 
@@ -128,15 +130,14 @@ class Cocomo {
 
 		System.out.println();
 		System.out.println("Enter  1. Organic System");
-		System.out.println("	   2. Semi-detached System");
-		System.out.println("	   3. Embedded System");
+		System.out.println("       2. Semi-detached System");
+		System.out.println("       3. Embedded System");
 		System.out.println();
-
 		System.out.print("Enter value : ");
+
 		classOfSystem = sc.nextInt();
 
 		return classOfSystem;
-
 	}
 
 	static int getKLOC() {
@@ -149,15 +150,15 @@ class Cocomo {
 		System.out.print("Enter number of lines of code in 1000");
 		System.out.println();
 
-		getKLOC = sc.nextInt();
+		KLOC = sc.nextInt();
 
-		return getKLOC;
+		return KLOC;
 	}
 
-	static double calculateEffort(int typeOfSystem, int classOfSystem, int KLOC, int EAF){
-		final static int INTERMEDIATE = 1;
-		final static int BASIC = 0;
-		int a = -1, b = -1;
+	static double calculateEffort(int typeOfSystem, int classOfSystem, int KLOC, double EAF){
+		final int INTERMEDIATE = 1;
+		final int BASIC = 0;
+		double a = -1.0, b = -1.0;
 
 		if(typeOfSystem == INTERMEDIATE){
 			Intermediate i = new Intermediate();
@@ -169,7 +170,7 @@ class Cocomo {
 			b = ba.b[classOfSystem];
 		}
 
-		return a*pow(KLOC,b)*EAF;
+		return a*Math.pow(KLOC,b)*EAF;
 	}
 
 	static double calculateDEV(double effort, int classOfSystem){
@@ -179,7 +180,7 @@ class Cocomo {
 		c = ba.c[classOfSystem];
 		d = ba.d[classOfSystem];
 
-		return c*pow(effort,d);
+		return c*Math.pow(effort,d);
 	}
 
 	public static void main(String[] args) {
@@ -199,14 +200,14 @@ class Cocomo {
 
 		switch (typeOfSystem) {
 			case BASIC:
-				effort = calculateEffort(typeOfSystem,classOfSystem,KLOC,1);
-				dev = calculateDEV(effort, classOfSystem);
+				effort = calculateEffort(typeOfSystem-1,classOfSystem-1,KLOC,1);
+				dev = calculateDEV(effort, classOfSystem-1);
 				System.out.println("Effort for Basic sys= "+effort);
 				System.out.println("Dev = "+dev);
 				break;
 			case INTERMEDIATE:
 				EAF = getEAF();
-				effort = calculateEffort(typeOfSystem,classOfSystem,KLOC,EAF);
+				effort = calculateEffort(typeOfSystem-1,classOfSystem-1,KLOC,EAF);
 				System.out.println("Effort for Intermediate sys= "+effort);
 				break;
 		}
