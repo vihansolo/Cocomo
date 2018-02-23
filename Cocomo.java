@@ -210,15 +210,15 @@ class Cocomo {
 
 		switch (typeOfSystem) {
 			case BASIC:
-				effort = calculateEffort(typeOfSystem-1,classOfSystem-1,KLOC,1);
-				dev = calculateDEV(effort, classOfSystem-1);
+				effort = calculateEffort(typeOfSystem,classOfSystem,KLOC,1);
+				dev = calculateDEV(effort, classOfSystem);
 				System.out.println();
 				System.out.println("Effort for Basic sys= "+effort);
 				System.out.println("Dev = "+dev);
 				break;
 			case INTERMEDIATE:
 				EAF = getEAF();
-				effort = calculateEffort(typeOfSystem-1,classOfSystem-1,KLOC,EAF);
+				effort = calculateEffort(typeOfSystem,classOfSystem,KLOC,EAF);
 				System.out.println();
 				System.out.println("Effort for Intermediate sys= "+effort);
 				break;
