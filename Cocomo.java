@@ -118,6 +118,11 @@ class Cocomo {
 
 		typeOfSystem = sc.nextInt();
 
+		// if(typeOfSystem <= 0 || typeOfSystem >= 3) {
+            //
+		// 	System.exit(0);
+		// }
+
 		return typeOfSystem;
 
 	}
@@ -136,6 +141,11 @@ class Cocomo {
 		System.out.print("Enter value : ");
 
 		classOfSystem = sc.nextInt();
+
+		// if(classOfSystem <= 0 || classOfSystem >= 4) {
+            //
+		// 	System.exit(0);
+		// }
 
 		return classOfSystem;
 	}
@@ -202,12 +212,14 @@ class Cocomo {
 			case BASIC:
 				effort = calculateEffort(typeOfSystem-1,classOfSystem-1,KLOC,1);
 				dev = calculateDEV(effort, classOfSystem-1);
+				System.out.println();
 				System.out.println("Effort for Basic sys= "+effort);
 				System.out.println("Dev = "+dev);
 				break;
 			case INTERMEDIATE:
 				EAF = getEAF();
 				effort = calculateEffort(typeOfSystem-1,classOfSystem-1,KLOC,EAF);
+				System.out.println();
 				System.out.println("Effort for Intermediate sys= "+effort);
 				break;
 		}
