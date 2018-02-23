@@ -204,8 +204,8 @@ class Cocomo {
 		double effort = 0;
 		double dev = 0;
 
-		typeOfSystem = getTypeOfSystem();
-		classOfSystem = getClassOfSystem();
+		typeOfSystem = getTypeOfSystem()-1;
+		classOfSystem = getClassOfSystem()-1;
 		KLOC = getKLOC();
 
 		switch (typeOfSystem) {
