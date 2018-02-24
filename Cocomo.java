@@ -118,10 +118,12 @@ class Cocomo {
 
 		typeOfSystem = sc.nextInt();
 
-		// if(typeOfSystem <= 0 || typeOfSystem >= 3) {
-            //
-		// 	System.exit(0);
-		// }
+		if(typeOfSystem <= 0 || typeOfSystem >= 3) {
+
+			System.out.println();
+			System.out.println("Enter values between 1 and 2!!!!");
+			System.exit(0);
+		}
 
 		return typeOfSystem;
 
@@ -142,10 +144,12 @@ class Cocomo {
 
 		classOfSystem = sc.nextInt();
 
-		// if(classOfSystem <= 0 || classOfSystem >= 4) {
-            //
-		// 	System.exit(0);
-		// }
+		if(classOfSystem <= 0 || classOfSystem >= 4) {
+
+			System.out.println();
+			System.out.println("Enter values between 1 and 3!!!!");
+			System.exit(0);
+		}
 
 		return classOfSystem;
 	}
@@ -157,10 +161,9 @@ class Cocomo {
 		int KLOC;
 
 		System.out.println();
-		System.out.print("Enter number of lines of code in 1000");
-		System.out.println();
-
+		System.out.print("Enter number of lines of code in 1000 : ");
 		KLOC = sc.nextInt();
+		System.out.println();
 
 		return KLOC;
 	}
@@ -213,14 +216,14 @@ class Cocomo {
 				effort = calculateEffort(typeOfSystem,classOfSystem,KLOC,1);
 				dev = calculateDEV(effort, classOfSystem);
 				System.out.println();
-				System.out.println("Effort for Basic sys= "+effort);
+				System.out.println("Effort for Basic sys : "+effort);
 				System.out.println("Dev = "+dev);
 				break;
 			case INTERMEDIATE:
 				EAF = getEAF();
 				effort = calculateEffort(typeOfSystem,classOfSystem,KLOC,EAF);
 				System.out.println();
-				System.out.println("Effort for Intermediate sys= "+effort);
+				System.out.println("Effort for Intermediate sys : "+effort);
 				break;
 		}
 	}
