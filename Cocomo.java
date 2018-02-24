@@ -106,6 +106,7 @@ class Cocomo {
     }
 
 	static int getTypeOfSystem() {
+
 		Scanner sc = new Scanner(System.in);
 
 		int typeOfSystem;
@@ -168,16 +169,21 @@ class Cocomo {
 		return KLOC;
 	}
 
-	static double calculateEffort(int typeOfSystem, int classOfSystem, int KLOC, double EAF){
+	static double calculateEffort(int typeOfSystem, int classOfSystem, int KLOC, double EAF) {
+
 		final int INTERMEDIATE = 1;
 		final int BASIC = 0;
 		double a = -1.0, b = -1.0;
 
-		if(typeOfSystem == INTERMEDIATE){
+		if(typeOfSystem == INTERMEDIATE) {
+
 			Intermediate i = new Intermediate();
 			a = i.a[classOfSystem];
 			b = i.b[classOfSystem];
-		}else if(typeOfSystem == BASIC){
+		}
+
+		else if(typeOfSystem == BASIC) {
+
 			Basic ba = new Basic();
 			a = ba.a[classOfSystem];
 			b = ba.b[classOfSystem];
@@ -186,7 +192,8 @@ class Cocomo {
 		return a*Math.pow(KLOC,b)*EAF;
 	}
 
-	static double calculateDEV(double effort, int classOfSystem){
+	static double calculateDEV(double effort, int classOfSystem) {
+
 		double c,d;
 
 		Basic ba = new Basic();
@@ -212,6 +219,7 @@ class Cocomo {
 		KLOC = getKLOC();
 
 		switch (typeOfSystem) {
+
 			case BASIC:
 				effort = calculateEffort(typeOfSystem,classOfSystem,KLOC,1);
 				dev = calculateDEV(effort, classOfSystem);
@@ -219,6 +227,7 @@ class Cocomo {
 				System.out.println("Effort for Basic sys : "+effort);
 				System.out.println("Dev = "+dev);
 				break;
+
 			case INTERMEDIATE:
 				EAF = getEAF();
 				effort = calculateEffort(typeOfSystem,classOfSystem,KLOC,EAF);
